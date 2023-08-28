@@ -1,0 +1,28 @@
+slic (
+image,
+n_segments: int=100,
+compactness: float=10,
+max_iter: int=10,
+sigma: int=0,
+spacing: NoneType=None,
+multichannel: bool=True,
+convert2lab: NoneType=None,
+enforce_connectivity: bool=True,
+min_size_factor: float=0.5,
+max_size_factor: int=3,
+slic_zero: bool=False
+)
+
+#n_segments : int, optional
+    #The (approximate) number of labels in the segmented output image.
+
+#compactness : float, optional
+    #Balances color proximity and space proximity. Higher values give more weight to space proximity,
+    #making superpixel shapes more square/cubic. This parameter depends strongly on image contrast and
+    # on the shapes of objects in the image. Higher values result in more regularly-shaped watershed basins.
+    #We recommend exploring possible values on a log scale, e.g., 0.01, 0.1, 1, 10, 100, before refining around a chosen value.
+
+#sigma : float or (3,) array-like of floats, optional
+    #Width of Gaussian smoothing kernel for pre-processing for each dimension of the image.
+    #The same sigma is applied to each dimension in case of a scalar value. Zero means no smoothing.
+    #Note, that sigma is automatically scaled if it is scalar and a manual voxel spacing is provided.
